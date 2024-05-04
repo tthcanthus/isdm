@@ -11,6 +11,9 @@ estimate.ISDM <- function(size,mat,rho1,rho2,v)
 # when v=0, the error follows normal distribution; when v=2, the error follows t-distribution t(2)
 {
     data.f = data.frame(y_c,x_c,x_r,mat%*%x_c,mat%*%x_r) 
+    # y_c is the reponse for the center model
+    # x_c is the center of interval covariate
+    # x_r is the range of interval covariate
     X <- cbind(x_c,x_r,mat%*%x_c,mat%*%x_r)
     formula <- y_c~.
     srk12w <- mat2listw(mat)
@@ -60,6 +63,7 @@ estimate.ISDM <- function(size,mat,rho1,rho2,v)
        result10 <- c(rho.h0,beta.h0)
     
     data.fr = data.frame(y_r,x_c,x_r,mat%*%x_c,mat%*%x_r) 
+    # y_r is the reponse for the range model
     formula <- y_r~.
     X <- cbind(x_c,x_r,mat%*%x_c,mat%*%x_r)
     begin.pr <- lagsarlm(formula,data.fr,srk12w)
