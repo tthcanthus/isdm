@@ -4,6 +4,7 @@ library(spatialreg)
 
 ##################################----EM algorithm for ISDM----########################################
 estimate.ISDM <- function(size,mat,rho1,rho2,v)
+# This function is the code for Algorithm 1, estimating parameters of the ISDM.
 # size is the sample size
 # mat is the weight matrix  w
 # rho1 is the spatial parameter rho_1 of the center model
@@ -111,6 +112,7 @@ estimate.ISDM <- function(size,mat,rho1,rho2,v)
 
 ##################################----EM algorithm for ISEM----########################################
 estimate.ISEM <- function(size,mat,rho1,rho2,v)
+# This function is the code for Algorithm 2, estimating parameters of the ISEM.
 # size is the sample size
 # mat is the weight matrix  w
 # rho1 is the spatial parameter rho_1 of the center model
